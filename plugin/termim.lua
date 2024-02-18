@@ -18,7 +18,7 @@ vim.api.nvim_create_user_command('Fterm', function(input)
     require("termim").open(input.args)
 end, { nargs = '*' })
 
-vim.api.nvim_create_user_command('Fterm', function(input)
+vim.api.nvim_create_user_command('FTerm', function(input)
     require("termim").open(input.args, nil, true)
 end, { nargs = '*' })
 
