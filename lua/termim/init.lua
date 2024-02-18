@@ -1,6 +1,6 @@
-local simterm = {}
+local termim = {}
 
-simterm.open = function(command, split_dir)
+termim.open = function(command, split_dir)
     if command == '' or command == nil then
         command = vim.env.SHELL
     end
@@ -12,4 +12,4 @@ simterm.open = function(command, split_dir)
     vim.cmd(split_dir .. ' term://' .. command)
 end
 
-return simterm
+return termim
