@@ -20,3 +20,15 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
         vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
     end,
 })
+
+vim.api.nvim_create_user_command('Term', function(input)
+    require("simterm").open(input.args)
+end, { nargs = '*' })
+
+vim.api.nvim_create_user_command('Sterm', function(input)
+    require("simterm").open(input.args, 'split')
+end, { nargs = '*' })
+
+vim.api.nvim_create_user_command('Vterm', function(input)
+    require("simterm").open(input.args, 'vsplit')
+end, { nargs = '*' })
