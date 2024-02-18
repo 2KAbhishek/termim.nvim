@@ -32,3 +32,5 @@ end, { nargs = '*' })
 vim.api.nvim_create_user_command('Vterm', function(input)
     require("simterm").open(input.args, 'vsplit')
 end, { nargs = '*' })
+
+vim.keymap.set('t', 'JJ', '<C-\\><C-n>', { buffer = true })
