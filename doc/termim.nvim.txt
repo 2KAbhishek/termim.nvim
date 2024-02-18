@@ -1,0 +1,74 @@
+TABLE OF CONTENTS                                              *termim.nvim.toc*
+1.  Introduction               (|termim.nvim|)
+2.  Quickstart                 (|termim-quickstart|)
+3.  Commands                   (|termim-commands|)
+4.  Mappings                   (|termim-mappings|)
+
+================================================================================
+INTRODUCTION                                                       *termim.nvim*
+
+termim.nvim improves your default neovim terminal experience while still keeping things super simple.
+
+Features
+
+- Cleans up the terminal UI
+- Auto closes terminal once process exits
+- Terminals do not mess with your buffer list
+- Handy commands to access Fullscreen and Split terminals
+- Extend commands easily with any program of your choice
+
+================================================================================
+QUICKSTART                                                   *termim-quickstart*
+
+Requirements
+
+- neovim
+
+Installation
+
+Add the following to your lazy/packer config
+
+```lua
+    -- Lazy
+    {
+        '2kabhishek/termim.nvim',
+        cmd = { 'Term', 'Sterm', 'Vterm' },
+    },
+
+    -- Packer
+    use '2kabhishek/termim.nvim'
+```
+
+================================================================================
+COMMANDS                                                       *termim-commands*
+
+`termim.nvim` adds the following commands:
+
+- `Term`: open terminal in new tab
+- `Sterm`: open terminal in new horizontal split
+- `Vterm`: open terminal in new vertical split
+
+All of the commands accept optional command as arg, if command is missing, your default shell will run
+
+- `Term lazygit`: will open lazygit in a new tab
+
+================================================================================
+MAPPINGS                                                       *termim-mappings*
+
+`termim.nvim` adds the following mappings:
+
+- <kbd>J</kbd> <kbd>J</kbd> — Return to normal mode in terminals, remap for '<C-\><C-n>'
+
+#### Recommended which-key Mappings
+
+Other than the standard commands, you can use which-key to create your own commands.
+
+```lua
+    t = {
+        name = 'Terminal',
+        t = { '<cmd>Term<cr>', "New Tab Terminal" },
+    },
+```
+
+================================================================================
+
