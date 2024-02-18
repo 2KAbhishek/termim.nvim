@@ -54,7 +54,7 @@ Add the following to your lazy/packer config
     -- Lazy
     {
         '2kabhishek/termim.nvim',
-        cmd = { 'Term', 'Sterm', 'Vterm' },
+        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
     },
 
     -- Packer
@@ -67,13 +67,16 @@ Add the following to your lazy/packer config
 
 `termim.nvim` adds the following commands:
 
-- `Term`: open terminal in new tab
+- `Fterm`: open terminal in new tab
+- `FTerm`: same as Fterm but stays open after process exits
 - `Sterm`: open terminal in new horizontal split
+- `STerm`: same as Sterm but stays open after process exits
 - `Vterm`: open terminal in new vertical split
+- `VTerm`: same as Vterm but stays open after process exits
 
-All of the commands accept optional command as arg, if command is missing, your default shell will run
+All the commands accept optional command as arg, if command is missing, your default shell will run
 
-- `Term lazygit`: will open lazygit in a new tab
+- `Fterm lazygit`: will open lazygit in a new tab
 
 ### ⌨️ Mappings
 
@@ -88,7 +91,15 @@ Other than the standard commands, you can use which-key to create your own comma
 ```lua
     t = {
         name = 'Terminal',
-        t = { '<cmd>Term<cr>', "New Tab Terminal" },
+        ['`'] = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
+        e = { '<cmd>Sterm iex<cr>', 'Elixir' },
+        e = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
+        n = { '<cmd>Sterm node<cr>', 'Node' },
+        p = { '<cmd>Sterm bpython<cr>', 'Python' },
+        r = { '<cmd>Sterm irb<cr>', 'Ruby' },
+        s = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
+        t = { '<cmd>Fterm<cr>', 'Terminal' },
+        v = { '<cmd>Vterm<cr>', 'Vertical Terminal' },
     },
 ```
 
@@ -100,7 +111,7 @@ You tell me!
 
 ### 🌈 Inspiration
 
-Most terminal plugins offer a lot more than I needed, where as I just needed some small enhancements of the default neovim terminal experience.
+Most terminal plugins offer a lot more than I needed, whereas I just needed some small enhancements of the default neovim terminal experience.
 
 ### 💡 Challenges/Learnings
 
