@@ -1,100 +1,122 @@
 <div align = "center">
 
-<h1><a href="https://github.com/2kabhishek/bare-minimum">bare-minimum</a></h1>
+<h1><a href="https://github.com/2kabhishek/termim.nvim">termim.nvim</a></h1>
 
-<a href="https://github.com/2KAbhishek/bare-minimum/blob/main/LICENSE">
-<img alt="License" src="https://img.shields.io/github/license/2kabhishek/bare-minimum?style=flat&color=eee&label="> </a>
+<a href="https://github.com/2KAbhishek/termim.nvim/blob/main/LICENSE">
+<img alt="License" src="https://img.shields.io/github/license/2kabhishek/termim.nvim?style=flat&color=eee&label="> </a>
 
-<a href="https://github.com/2KAbhishek/bare-minimum/graphs/contributors">
-<img alt="People" src="https://img.shields.io/github/contributors/2kabhishek/bare-minimum?style=flat&color=ffaaf2&label=People"> </a>
+<a href="https://github.com/2KAbhishek/termim.nvim/graphs/contributors">
+<img alt="People" src="https://img.shields.io/github/contributors/2kabhishek/termim.nvim?style=flat&color=ffaaf2&label=People"> </a>
 
-<a href="https://github.com/2KAbhishek/bare-minimum/stargazers">
-<img alt="Stars" src="https://img.shields.io/github/stars/2kabhishek/bare-minimum?style=flat&color=98c379&label=Stars"></a>
+<a href="https://github.com/2KAbhishek/termim.nvim/stargazers">
+<img alt="Stars" src="https://img.shields.io/github/stars/2kabhishek/termim.nvim?style=flat&color=98c379&label=Stars"></a>
 
-<a href="https://github.com/2KAbhishek/bare-minimum/network/members">
-<img alt="Forks" src="https://img.shields.io/github/forks/2kabhishek/bare-minimum?style=flat&color=66a8e0&label=Forks"> </a>
+<a href="https://github.com/2KAbhishek/termim.nvim/network/members">
+<img alt="Forks" src="https://img.shields.io/github/forks/2kabhishek/termim.nvim?style=flat&color=66a8e0&label=Forks"> </a>
 
-<a href="https://github.com/2KAbhishek/bare-minimum/watchers">
-<img alt="Watches" src="https://img.shields.io/github/watchers/2kabhishek/bare-minimum?style=flat&color=f5d08b&label=Watches"> </a>
+<a href="https://github.com/2KAbhishek/termim.nvim/watchers">
+<img alt="Watches" src="https://img.shields.io/github/watchers/2kabhishek/termim.nvim?style=flat&color=f5d08b&label=Watches"> </a>
 
-<a href="https://github.com/2KAbhishek/bare-minimum/pulse">
-<img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/bare-minimum?style=flat&color=e06c75&label="> </a>
+<a href="https://github.com/2KAbhishek/termim.nvim/pulse">
+<img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/termim.nvim?style=flat&color=e06c75&label="> </a>
 
-<h3>Short Sweet Headline 🎇🎉</h3>
+<h3>Neovim Terminal, Improved 🦾💻</h3>
 
 <figure>
-  <img src="images/screenshot.png" alt="bare-minimum in action">
+  <img src="images/screenshot.jpg" alt="termim.nvim in action">
   <br/>
-  <figcaption>bare-minimum in action</figcaption>
+  <figcaption>termim.nvim in action</figcaption>
 </figure>
 
 </div>
 
-bare-minimum is a `<utility/tool>` that allows `<target_audience>` to `<action>`.
+termim.nvim improves your default neovim terminal experience while still keeping things super simple.
 
 ## ✨ Features
 
-- Comes with a ready to go README template
-- Works with [mkrepo](https://github.com/2kabhishek/mkrepo)
+- Cleans up the terminal UI
+- Auto closes terminal once process exits
+- Terminals do not mess with your buffer list
+- Handy commands to access Fullscreen and Split terminals
+- Extend commands easily with any program of your choice
 
 ## ⚡ Setup
 
 ### ⚙️ Requirements
 
-- foo >= bar
-- bazz
+- neovim
 
 ### 💻 Installation
 
-Installing bare-minimum is as simple as cloning and symlinking!
+Add the following to your lazy/packer config
 
-```bash
-git clone https://github.com/2kabhishek/bare-minimum
-cd bare-minimum
-<install_command>
+```lua
+    -- Lazy
+    {
+        '2kabhishek/termim.nvim',
+        cmd = { 'Term', 'Sterm', 'Vterm' },
+    },
+
+    -- Packer
+    use '2kabhishek/termim.nvim'
 ```
 
 ## 🚀 Usage
 
-```bash
-USAGE:
-    bare-minimum [FLAGS] [OPTIONS]
-Example:
-    bare-minimum
+### 📡 Commands
+
+`termim.nvim` adds the following commands:
+
+- `Term`: open terminal in new tab
+- `Sterm`: open terminal in new horizontal split
+- `Vterm`: open terminal in new vertical split
+
+All of the commands accept optional command as arg, if command is missing, your default shell will run
+
+- `Term lazygit`: will open lazygit in a new tab
+
+### ⌨️ Mappings
+
+`termim.nvim` adds the following mappings:
+
+- <kbd>J</kbd> <kbd>J</kbd> — Return to normal mode in terminals, remap for '<C-\><C-n>'
+
+#### Recommended which-key Mappings
+
+Other than the standard commands, you can use which-key to create your own commands.
+
+```lua
+    t = {
+        name = 'Terminal',
+        t = { '<cmd>Term<cr>', "New Tab Terminal" },
+    },
 ```
 
 ## 🏗️ What's Next
 
-Planning to add `<feature/module>`.
-
-### ✅ To-Do
-
-- [x] Setup repo
-- [ ] Think real hard
-- [ ] Start typing
+You tell me!
 
 ## 🧑‍💻 Behind The Code
 
 ### 🌈 Inspiration
 
-bare-minimum was inspired by `<reason/idea>`.
+Most terminal plugins offer a lot more than I needed, where as I just needed some small enhancements of the default neovim terminal experience.
 
 ### 💡 Challenges/Learnings
 
-- The main challenges were `<issue/difficulty>`
-- I learned about `<learning/accomplishment>`
+- Figuring out some autogroup and buffer related APIs
 
 ### 🧰 Tooling
 
 - [dots2k](https://github.com/2kabhishek/dots2k) — Dev Environment
+- [mac2k](https://github.com/2kabhishek/mac2k) — Mac Dev Environment
 - [nvim2k](https://github.com/2kabhishek/nvim2k) — Personalized Editor
-- [sway2k](https://github.com/2kabhishek/sway2k) — Desktop Environment
-- [qute2k](https://github.com/2kabhishek/qute2k) — Personalized Browser
 
 ### 🔍 More Info
 
-- [shelly](https://github.com/2kabhishek/shelly) — Command line template
-- [tiny-web](https://github.com/2kabhishek/tiny-web) — Web app template
+- [tdo.nvim](https://github.com/2kabhishek/tdo.nvim) — Fast and simple note-taking in neovim
+- [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — Easily add git co authors
+- [nerdy.nvim](https://github.com/2kabhishek/nerdy.nvim) — Easily add nerd glyphs
 
 <hr>
 
@@ -102,7 +124,7 @@ bare-minimum was inspired by `<reason/idea>`.
 
 <strong>⭐ hit the star button if you found this useful ⭐</strong><br>
 
-<a href="https://github.com/2KAbhishek/bare-minimum">Source</a>
+<a href="https://github.com/2KAbhishek/termim.nvim">Source</a>
 | <a href="https://2kabhishek.github.io/blog" target="_blank">Blog </a>
 | <a href="https://twitter.com/2kabhishek" target="_blank">Twitter </a>
 | <a href="https://linkedin.com/in/2kabhishek" target="_blank">LinkedIn </a>
