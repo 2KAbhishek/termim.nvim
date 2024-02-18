@@ -34,10 +34,10 @@ termim.nvim improves your default neovim terminal experience while still keeping
 
 ## ✨ Features
 
-- Cleans up the terminal UI
+- Cleans up unnecessary clutter from terminal UI
 - Auto closes terminal once process exits
 - Terminals do not mess with your buffer list
-- Handy commands to access Fullscreen and Split terminals
+- Handy commands to access full screen and split terminals
 - Extend commands easily with any program of your choice
 
 ## ⚡ Setup
@@ -82,7 +82,7 @@ All the commands accept optional command as arg, if command is missing, your def
 
 `termim.nvim` adds the following mappings:
 
-- <kbd>J</kbd> <kbd>J</kbd> — Return to normal mode in terminals, remap for '<C-\><C-n>'
+- <kbd>J</kbd> <kbd>J</kbd> — Return to normal mode in terminals, remap for `<C-\><C-n>`
 
 #### Recommended which-key Mappings
 
