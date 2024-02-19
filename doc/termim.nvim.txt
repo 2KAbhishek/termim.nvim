@@ -71,7 +71,7 @@ Other than the standard commands, you can use which-key to create your own comma
         name = 'Terminal',
         ['`'] = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
         e = { '<cmd>Sterm iex<cr>', 'Elixir' },
-        e = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
+        g = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
         n = { '<cmd>Sterm node<cr>', 'Node' },
         p = { '<cmd>Sterm bpython<cr>', 'Python' },
         r = { '<cmd>Sterm irb<cr>', 'Ruby' },
