@@ -30,15 +30,16 @@
 
 </div>
 
-termim.nvim improves your default neovim terminal experience while still keeping things super simple.
+termim.nvim improves your default neovim terminal experience, keeping it super simple.
 
 ## ✨ Features
 
+- Auto enter insert mode when opening terminal
 - Cleans up unnecessary clutter from terminal UI
 - Auto closes terminal once process exits
 - Terminals do not mess with your buffer list
 - Handy commands to access full screen and split terminals
-- Extend commands easily with any program of your choice
+- Extend commands with any program of your choice
 
 ## ⚡ Setup
 
@@ -111,7 +112,7 @@ You tell me!
 
 ### 🌈 Inspiration
 
-Most terminal plugins offer a lot more than I needed, whereas I just needed some small enhancements of the default neovim terminal experience.
+Most terminal plugins offer a lot more than I needed, whereas I needed some small enhancements of the default neovim terminal experience.
 
 ### 💡 Challenges/Learnings
 
@@ -126,8 +127,8 @@ Most terminal plugins offer a lot more than I needed, whereas I just needed some
 ### 🔍 More Info
 
 - [tdo.nvim](https://github.com/2kabhishek/tdo.nvim) — Fast and simple note-taking in neovim
-- [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — Easily add git co authors
-- [nerdy.nvim](https://github.com/2kabhishek/nerdy.nvim) — Easily add nerd glyphs
+- [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — Search and add git co authors
+- [nerdy.nvim](https://github.com/2kabhishek/nerdy.nvim) — Search and add nerd glyphs
 
 <hr>
 
