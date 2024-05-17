@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
     callback = function(event)
         vim.cmd('setlocal nonumber')
         vim.cmd('setlocal norelativenumber')
+        vim.cmd('setlocal signcolumn=no')
         vim.cmd('startinsert!')
         vim.cmd('set cmdheight=1')
         vim.bo[event.buf].buflisted = false
