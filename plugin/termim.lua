@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
         vim.cmd('setlocal nonumber')
         vim.cmd('setlocal norelativenumber')
         vim.cmd('setlocal signcolumn=no')
-        vim.cmd('startinsert!')
+        vim.cmd('if bufnr("$") == '..event.buf..' | startinsert | endif')
         vim.cmd('set cmdheight=1')
         vim.bo[event.buf].buflisted = false
         vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
