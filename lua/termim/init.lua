@@ -1,6 +1,6 @@
 local termim = {}
 
-termim.close_augroup = "termim_auto_close"
+termim.close_augroup = 'termim_auto_close'
 
 termim.auto_close = function()
     vim.api.nvim_create_autocmd({ 'TermClose' }, {
@@ -12,9 +12,9 @@ termim.auto_close = function()
 end
 
 termim.keep_open = function()
-    vim.api.nvim_command("augroup " .. termim.close_augroup)
-    vim.api.nvim_command("autocmd!")
-    vim.api.nvim_command("augroup END")
+    vim.api.nvim_command('augroup ' .. termim.close_augroup)
+    vim.api.nvim_command('autocmd!')
+    vim.api.nvim_command('augroup END')
 end
 
 termim.open = function(command, split_dir, keep_open)

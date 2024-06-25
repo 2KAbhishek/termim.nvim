@@ -1,8 +1,8 @@
 if vim.g.loaded_termim then
     return
 end
-
 vim.g.loaded_termim = true
+local termim = require('termim')
 
 vim.api.nvim_create_autocmd({ 'TermOpen' }, {
     group = vim.api.nvim_create_augroup('termim_open', { clear = true }),
@@ -18,27 +18,27 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
 })
 
 vim.api.nvim_create_user_command('Fterm', function(input)
-    require("termim").open(input.args)
+    termim.open(input.args)
 end, { nargs = '*' })
 
 vim.api.nvim_create_user_command('FTerm', function(input)
-    require("termim").open(input.args, nil, true)
+    termim.open(input.args, nil, true)
 end, { nargs = '*' })
 
 vim.api.nvim_create_user_command('Sterm', function(input)
-    require("termim").open(input.args, 'split')
+    termim.open(input.args, 'split')
 end, { nargs = '*' })
 
 vim.api.nvim_create_user_command('STerm', function(input)
-    require("termim").open(input.args, 'split', true)
+    termim.open(input.args, 'split', true)
 end, { nargs = '*' })
 
 vim.api.nvim_create_user_command('Vterm', function(input)
-    require("termim").open(input.args, 'vsplit')
+    termim.open(input.args, 'vsplit')
 end, { nargs = '*' })
 
 vim.api.nvim_create_user_command('VTerm', function(input)
-    require("termim").open(input.args, 'vsplit', true)
+    termim.open(input.args, 'vsplit', true)
 end, { nargs = '*' })
 
 vim.keymap.set('t', 'JJ', '<C-\\><C-n>', { buffer = true })
