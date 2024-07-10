@@ -19,7 +19,7 @@ end
 
 termim.open = function(command, split_dir, keep_open)
     if command == '' or command == nil then
-        command = vim.env.SHELL
+        command = vim.o.shell
     end
 
     if split_dir == '' or split_dir == nil then
