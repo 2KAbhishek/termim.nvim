@@ -1,4 +1,4 @@
-*termim.txt*         For Neovim >= 0.8.0         Last change: 2025 November 25
+*termim.txt*         For Neovim >= 0.8.0         Last change: 2025 November 30
 
 ==============================================================================
 Table of Contents                                   *termim-table-of-contents*
