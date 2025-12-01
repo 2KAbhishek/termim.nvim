@@ -1,4 +1,4 @@
-*termim.txt*         For Neovim >= 0.8.0         Last change: 2025 November 30
+*termim.txt*         For Neovim >= 0.8.0         Last change: 2025 December 01
 
 ==============================================================================
 Table of Contents                                   *termim-table-of-contents*
@@ -17,9 +17,8 @@ FEATURES                                                     *termim-features*
 
 - Auto enter insert mode when opening terminal
 - Cleans up unnecessary clutter from terminal UI
-- Auto closes terminal once process exits
-- Terminals do not mess with your buffer list
-- Handy commands to access full screen and split terminals
+- Auto closes or persist terminals based on your needs
+- Handy commands and keybindings to work with full screen, floating and split terminals
 - Extend commands with any program of your choice
 
 
@@ -58,8 +57,8 @@ COMMANDS ~
 - `Sterm`: open terminal in new horizontal split
 - `Tterm`: open terminal in new tab
 - `Vterm`: open terminal in new vertical split
-- `FTerm`/`STerm`/`TTerm`/`VTerm`: same as above but keeps terminal open after
-    process exits
+- `FTerm`/`STerm`/`TTerm`/`VTerm`: same as above but persist the terminal if not
+    exited manually
 
 All the commands accept optional command as arg, if command is missing, your
 default shell will run
@@ -72,6 +71,8 @@ MAPPINGS ~
 `termim.nvim` adds the following mappings:
 
 - J J — Return to normal mode in terminals, remap for `<C-\><C-n>`
+- q - Close terminal buffer from insert mode, respects persistence / auto-close behaviour
+- Ctrl + q - Close terminal buffer from any mode, respects persistence / auto-close behaviour
 
 
 RECOMMENDED WHICH-KEY MAPPINGS
