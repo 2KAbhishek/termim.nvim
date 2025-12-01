@@ -43,7 +43,7 @@ local get_float_win = function()
         row = row,
         col = col,
         style = 'minimal',
-        border = 'single',
+        border = 'rounded',
     }
 end
 
