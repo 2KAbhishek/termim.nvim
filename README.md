@@ -37,7 +37,7 @@ termim.nvim improves your default neovim terminal experience, keeping it super s
 - Auto enter insert mode when opening terminal
 - Cleans up unnecessary clutter from terminal UI
 - Auto closes or persist terminals based on your needs
-- Handy commands to access full screen, floating and split terminals
+- Handy commands and keybindings to work with full screen, floating and split terminals
 - Extend commands with any program of your choice
 
 ## ⚡ Setup
@@ -83,6 +83,8 @@ All the commands accept optional command as arg, if command is missing, your def
 `termim.nvim` adds the following mappings:
 
 - <kbd>J</kbd> <kbd>J</kbd> — Return to normal mode in terminals, remap for `<C-\><C-n>`
+- <kbd>q</kbd> - Close terminal buffer from insert mode, respects persistence / auto-close behaviour
+- <kbd>Ctrl</kbd> + <kbd>q</kbd> - Close terminal buffer from any mode, respects persistence / auto-close behaviour
 
 #### Recommended which-key Mappings
 

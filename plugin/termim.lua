@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
             vim.bo[event.buf].bufhidden = 'wipe'
         end
         vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
+        vim.keymap.set({ 'i', 'n', 't', 'x' }, '<C-q>', '<cmd>close<cr>', { buffer = event.buf, silent = true })
     end,
 })
 
