@@ -1,5 +1,7 @@
 local termim = {}
 
+termim.close_augroup = 'termim_auto_close'
+
 termim.persistent_map = {
     float = { buf = nil, win = nil },
     split = { buf = nil, win = nil },
@@ -7,18 +9,7 @@ termim.persistent_map = {
     tabnew = { buf = nil, win = nil },
 }
 
-termim.is_persistent = function(buf)
-    for _, term in pairs(termim.persistent_map) do
-        if term.buf == buf then
-            return true
-        end
-    end
-    return false
-end
-
-termim.close_augroup = 'termim_auto_close'
-
-termim.auto_close = function()
+local auto_close = function()
     vim.api.nvim_create_autocmd({ 'TermClose' }, {
         group = vim.api.nvim_create_augroup(termim.close_augroup, { clear = true }),
         callback = function(event)
@@ -34,7 +25,7 @@ termim.auto_close = function()
     })
 end
 
-termim.keep_open = function()
+local keep_open = function()
     vim.api.nvim_command('augroup ' .. termim.close_augroup)
     vim.api.nvim_command('autocmd!')
     vim.api.nvim_command('augroup END')
@@ -75,7 +66,7 @@ local create_terminal = function(buf, command, split_dir)
 end
 
 local toggle_persistent_terminal = function(command, split_dir)
-    termim.keep_open()
+    keep_open()
 
     local persistent_term = termim.persistent_map[split_dir]
 
@@ -95,9 +86,18 @@ local toggle_persistent_terminal = function(command, split_dir)
 end
 
 local open_ephemeral_terminal = function(command, split_dir)
-    termim.auto_close()
+    auto_close()
     local buf = vim.api.nvim_create_buf(false, true)
     create_terminal(buf, command, split_dir)
+end
+
+termim.is_persistent = function(buf)
+    for _, term in pairs(termim.persistent_map) do
+        if term.buf == buf then
+            return true
+        end
+    end
+    return false
 end
 
 termim.open = function(command, split_dir, persistent)
