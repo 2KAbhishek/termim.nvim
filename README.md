@@ -36,9 +36,8 @@ termim.nvim improves your default neovim terminal experience, keeping it super s
 
 - Auto enter insert mode when opening terminal
 - Cleans up unnecessary clutter from terminal UI
-- Auto closes terminal once process exits
-- Terminals do not mess with your buffer list
-- Handy commands to access full screen and split terminals
+- Auto closes or persist terminals based on your needs
+- Handy commands to access full screen, floating and split terminals
 - Extend commands with any program of your choice
 
 ## ⚡ Setup
@@ -73,7 +72,7 @@ Add the following to your lazy/packer config
 - `Tterm`: open terminal in new tab
 - `Vterm`: open terminal in new vertical split
 
-- `FTerm`/`STerm`/`TTerm`/`VTerm`: same as above but keeps terminal open after process exits
+- `FTerm`/`STerm`/`TTerm`/`VTerm`: same as above but persist the terminal if not exited manually
 
 All the commands accept optional command as arg, if command is missing, your default shell will run
 
